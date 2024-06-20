@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 1489700846}
   - component: {fileID: 1489700845}
   - component: {fileID: 1489700844}
+  - component: {fileID: 1489700847}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -414,6 +415,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489700842}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1489700847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489700842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6497f99728a4f6886b7dd6e43666c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1702035964
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +557,7 @@ GameObject:
   - component: {fileID: 1811632326}
   - component: {fileID: 1811632325}
   - component: {fileID: 1811632324}
+  - component: {fileID: 1811632327}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -639,6 +653,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811632322}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1811632327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811632322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1333021b47bc45b482b9c443083b63de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1944680068
 GameObject:
   m_ObjectHideFlags: 0
