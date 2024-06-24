@@ -10,13 +10,10 @@ namespace DefaultNamespace
 
         [SerializeField] private TextMeshProUGUI _text;
 
-        private bool _counterIsActive;
+        private bool _counterIsActive = false;
 
-        private void Start()
-        {
+        private void Start() =>
             _text.text = 0.ToString();
-            _counterIsActive = false;
-        }
 
         private void OnEnable()
         {
