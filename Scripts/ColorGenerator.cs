@@ -13,10 +13,8 @@ namespace DefaultNamespace
             Fill();
         }
 
-        public Color GetRandomColor()
-        {
-            return _colors[Random.Range(0, _colors.Count)];
-        }
+        public Color GetRandomColor() => 
+            _colors[Random.Range(0, _colors.Count)];
 
         private void Fill()
         {

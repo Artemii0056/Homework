@@ -1,21 +1,21 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(
-    typeof(MeshRenderer), 
+    typeof(MeshRenderer),
     typeof(Rigidbody))]
 public class Cube : MonoBehaviour
 {
     private Color _color;
     private MeshRenderer _meshRenderer;
-    
+    private int _maxChanсeOfSeparation = 100;
+
+    public event Action<Cube> Destroyed;
+
     public Rigidbody Rigidbody { get; private set; }
 
     public int ChanсeOfSeparation { get; private set; } = 100;
-
-    public int MaxChanсeOfSeparation { get; private set; } = 100;
-
-    public event Action<Cube> Destroyed;
 
     private void Awake()
     {
@@ -25,9 +25,10 @@ public class Cube : MonoBehaviour
 
     public void OnMouseUpAsButton()
     {
-        Destroyed?.Invoke(this);
+        if (ChanсeOfSeparation >= Random.Range(0, _maxChanсeOfSeparation)) 
+            Destroyed?.Invoke(this);
 
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     public void Init(Color color, Vector3 scale, int chanceOfSeparation)

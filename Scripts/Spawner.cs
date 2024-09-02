@@ -21,6 +21,12 @@ namespace DefaultNamespace
                 cube.Destroyed += OnCubeDestroyed;
         }
 
+        private void OnDisable()
+        {
+            foreach (var cube in _cubes)
+                cube.Destroyed -= OnCubeDestroyed;
+        }
+
         private Cube Spawn(Transform transform, int separationChance)
         {
             int scaleDivider = 2;
@@ -35,13 +41,11 @@ namespace DefaultNamespace
 
         private void OnCubeDestroyed(Cube cube)
         {
-            cube.Destroyed -= OnCubeDestroyed;
-            
-            if (cube.ChanсeOfSeparation < Random.Range(0, cube.MaxChanсeOfSeparation))
-                return;
+           List<Cube> cubes = SpawnCubes(cube);
+           
+           _cubes.AddRange(cubes);
 
-            Explode(cube.transform.position, SpawnCubes(cube));
-
+            Explode(cube.transform.position, cubes);
         }
 
         private List<Cube> SpawnCubes(Cube cube)
@@ -57,7 +61,7 @@ namespace DefaultNamespace
 
             for (int i = 0; i < spawnCount; i++)
                 cubes.Add(Spawn(cube.transform, cube.ChanсeOfSeparation / chanceDivider));
-
+            
             return cubes;
         }
 
