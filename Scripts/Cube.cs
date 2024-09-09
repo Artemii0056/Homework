@@ -25,7 +25,7 @@ public class Cube : MonoBehaviour
 
     public void OnMouseUpAsButton()
     {
-        if (ChanсeOfSeparation >= Random.Range(0, _maxChanсeOfSeparation)) 
+        if (ChanсeOfSeparation < Random.Range(0, _maxChanсeOfSeparation)) //от обратного
             Destroyed?.Invoke(this);
 
         Destroy(gameObject);

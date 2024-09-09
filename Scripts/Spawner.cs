@@ -39,7 +39,7 @@ namespace DefaultNamespace
             return cube;
         }
 
-        private void OnCubeDestroyed(Cube cube)
+        private void OnCubeDestroyed(Cube cube) 
         {
            List<Cube> cubes = SpawnCubes(cube);
            
@@ -69,6 +69,9 @@ namespace DefaultNamespace
         {
             int force = 100;
             int radius = 20;
+            
+            Collider[] colliders = Physics.OverlapSphere(position, )
+
 
             foreach (var cube in cubes)
                 cube.Rigidbody.AddExplosionForce(force, position, radius);
